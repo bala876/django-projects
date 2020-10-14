@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1"/>
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'crud/css/bootstrap.css' %}"/>
+		<style>
+table {
+    border-collapse: collapse;
+    width: 100%;
+	border-color: black;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+	border-color: black;
+}
+
+tr:nth-child(even){background-color: #F5B7B1}
+tr:nth-child(odd){background-color: #EC7063}
+th {
+    background-color: #4CAF50;
+    color: white;
+	border-color: black;
+}
+</style>
+    </head>
+<body style="background-color:#EC7063">
+
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <a class="navbar-brand" href=""><p><b><font face="Tw Cen MT" color="#76448A" size=6>&nbsp;	&nbsp;&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;&nbsp;Project For Web Based Buspass Registration and Renewal Process</font></b></p> </a>
+        </div>
+    </nav>
+    <div class="col-md-1"></div>
+    <div class="col-md-10 well" style="background-color:#F5B7B1"> 
+        <h3 class="text-primary"><p><b><font face="Comic Sans MS" color="#922B21" size=6>Buspass Registration</font></b></p></h3>
+        <hr style="border-top:1px dotted #000;"/>
+        {% block body %}
+        {% endblock %}
+    </div>
+
+</body>
+</html>
