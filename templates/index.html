@@ -1,0 +1,71 @@
+{% extends 'crud/base.html' %}
+{% block body %}
+<form class="form-inline"  action="create" method="POST">
+    {% csrf_token %}
+    <div class="form-group">
+        <center><label for="firstname">firstname</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" name="firstname" placeholder="your firstname" class="form-control" style="width:60%;" required="required"/><br><br>		
+		<label for="lastname">lastname</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" name="lastname" placeholder="your lastname" class="form-control" style="width:60%;" required="required"/><br><br>
+		<label for="dob">dob</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="date" name="dob" placeholder="your dob" class="form-control" style="width:60%;" required="required"/><br><br>
+		<label for="age">age</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" name="age" placeholder="your age" class="form-control" style="width:60%;" required="required"/><br><br>
+		<label for="gender">gender</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" name="gender" placeholder="your gender" class="form-control" style="width:60%;" required="required"/><br><br>
+		<label for="mobilenumber">mobilenumber</label>&nbsp;&nbsp;
+        <input type="text" name="mobilenumber" placeholder="your mobilenumber" class="form-control" style="width:60%;" required="required"/><br><br>
+		<label for="address">address</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" name="address" placeholder="your address" class="form-control" style="width:60%;" required="required"/><br><br>
+		<label for="emailid">emailid</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" name="emailid" placeholder="your emailid" class="form-control" style="width:60%;" required="required"/><br><br>
+		<label for="password">password</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="password" name="password" placeholder="your password" class="form-control" style="width:60%;" required="required"/><br><br>
+		<label for="placedetails">placedetails</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" name="placedetails" placeholder="your placedetails" class="form-control" style="width:60%;" required="required"/><br><br>
+		<label for="pincode">pincode</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" name="pincode" placeholder="your pincode" class="form-control" style="width:60%;" required="required"/><br><br>
+</center>
+		<br>
+        <button type="submit" class="btn btn-sm btn-primary"><span class="glyphicon glyphicon-plus"></span> ADD</button>
+    </div>
+</form>
+<br />
+<br />
+<table border="1px">
+    <thead class="alert-warning">
+        <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+			<th>dob</th>
+			<th>age</th>
+			<th>gender</th>
+			<th>mobilenumber</th>
+			<th>address</th>
+			<th>emailid</th>
+			<th>password</th>
+			<th>placedetails</th>
+			<th>pincode</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for member in members %}
+        <tr>
+            <td>{{ member.firstname }}</td>
+            <td>{{ member.lastname }}</td>
+			<td>{{member.dob}}</td>
+			<td>{{member.age}}</td>
+			<td>{{member.gender}}</td>
+			<td>{{member.mobilenumber}}</td>
+			<td>{{member.address}}</td>
+			<td>{{member.emailid}}</td>
+			<td>{{member.password}}</td>
+			<td>{{member.placedetails}}</td>
+			<td>{{member.pincode}}</td>
+            <td><center><a class="btn btn-sm btn-warning" href="edit/{{ member.id }}"><span class="glyphicon glyphicon-edit"></span> Edit</a> <a class="btn btn-sm btn-danger" href="delete/{{ member.id }}"><span class="glyphicon glyphicon-trash"></span> Delete</a></center></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
