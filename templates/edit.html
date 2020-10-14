@@ -1,0 +1,57 @@
+{% extends 'crud/base.html' %}
+{% block body %}
+    <form method="POST" action="update/{{ members.id }}">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="firstname">Firstname</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="text" name="firstname" value="{{ members.firstname }}" required="required"/>
+        </div>
+        <div class="form-group">
+            <label for="lastname">Lastname</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="text" name="lastname" value="{{ members.lastname }}" required="required"/>
+        </div>
+		<div class="form-group">
+            <label for="dob">dob</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="date" name="dob" value="{{ members.dob }}" required="required"/>
+        </div>
+		<div class="form-group">
+            <label for="age">age</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="text" name="age" value="{{ members.age }}" required="required"/>
+        </div>
+		<div class="form-group">
+            <label for="gender">gender</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="text" name="gender" value="{{ members.gender }}" required="required"/>
+        </div>
+		<div class="form-group">
+            <label for="mobilenumber">mobilenumber</label>&nbsp;&nbsp;
+            <input type="text" name="mobilenumber" value="{{ members.mobilenumber }}" required="required"/>
+        </div>
+
+		<div class="form-group">
+            <label for="address">address</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="text" name="address" value="{{ members.address }}" required="required"/>
+        </div>
+
+		<div class="form-group">
+            <label for="gender">emailid</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="text" name="emailid" value="{{ members.emailid }}" required="required"/>
+        </div>
+		<div class="form-group">
+            <label for="password">password</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="password" name="password" value="{{ members.password }}" required="required"/>
+        </div>
+		<div class="form-group">
+            <label for="placedetails">placedetails</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="text" name="placedetails" value="{{ members.placedetails }}" required="required"/>
+        </div>
+		<div class="form-group">
+            <label for="pincode">pincode</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="text" name="pincode" value="{{ members.pincode }}" required="required"/>
+        </div>
+
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-edit"></span> Update</button>
+        </div>
+    </form>
+{% endblock %}
